@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="{% static 'users/css/register.css' %}">
+	</head>
+	<body>
+		<div id="register">
+			<router-link to="/" ><a href="/"><img src="{% static 'users/img/cancel.jpg' %}" /></a></router-link>
+			<div class="title">八斗教育</div>
+			<div class="box">
+				<form action="" method="post">
+                    {% csrf_token %}
+					<input v-model="loginData.username" type="text" name='mobile' id="mobile" placeholder="请输入您的手机号码"/>
+					<input v-model="loginData.password1" type="password" name="password1" class="pw" placeholder="请输入您的密码"/>
+					<input v-model="loginData.password2" type="password" name="password2" class="pw" placeholder="请再次输入您的密码"/>
+					<button type="submit" @click="register" id="bt">确定</button>
+				</form>
+			</div>
+		</div>
+		<script src="https://cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+		<script src="{% static 'users/js/register.js' %}"></script>
+	</body>
+</html>

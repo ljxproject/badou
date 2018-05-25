@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" href="{% static 'users/css/login.css' %}">
+	</head>
+	<body>
+		<div id="bg" ></div>
+		<div id="login">
+			<div class="title">八斗教育</div>
+			<div class="box">
+				<form action="" method="post">
+                    {% csrf_token %}
+					<input v-model="loginData.mobile" type="text" name='mobile' id="mobile" placeholder="请输入您的手机号码"/>
+					<input v-model="loginData.password" type="password" name="password" id="pw" placeholder="请输入您的密码"/>
+					<button type="submit" @click="login" id="bt">登录</button>
+				</form>
+			</div>
+		
+			<a href="#" id="rspw">忘记密码？</a>
+			<router-link to="/register" ><a href="/register" id="register">注册</a></router-link>
+		</div>
+        <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+		<script src="{% static 'users/js/login.js' %}"></script>
+	</body>
+</html>
